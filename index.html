@@ -24,17 +24,55 @@
     <script src="js/game.js"></script>
 </head>
 
-<body onload="init()">
-
-    <h1>El pollo loco</h1>
-
-    <canvas id="canvas" width="720" height="480"> 
+<body>
+    <canvas id="canvas" class="trans" width="720" height="480"> 
 </canvas>
-    <div class="info">
-        <div>Arows Left /Right = Walk</div>
-        <div>Arows Up = Jump</div>
-        <div>Arows Spacebar = Throw Tabasco</div>
+
+    <div>
+        <img class="start-end-screen" id="start-end-screen" src="img/9_intro_outro_screens/start/startscreen_1.png" alt="startEndSccren">
     </div>
+
+    <div id="infoBox" class="info_box d-none">
+        <div>
+            <h4>Controlls</h4>
+            <p>Arows Left = Walk Left</p>
+            <p> Arows Right = Walk Right</p>
+            <p> Arows Right= jump</p>
+            <p> Spacebar= Throw bottle</p>
+            <br>
+            <h4>Mobile</h4>
+            <p> <img src="./img/jump.png">: jump</p>
+            <p> <img src="./img/throw.png">: throw bottle</p>
+        </div>
+    </div>
+    <div class="turnbtn">PLEASE TURN</div>
+    <button id="music1" class="btn" onclick="music1()">MUSIC</button>
+    <button id="music2" class="btn" onclick="music2()">MUSIC</button>
+    <button id="infoBtn" class="btn" onclick="info()">INFO</button>
+    <button id="startBtn" class="btn" onclick="init()">START</button>
+    </div>
+
+
+    <div id="left" class="mobile_controlls d-none" ontouchstart="touchDownLeft()" ontouchend="touchUpLeft()">
+        <img src="./img/arrow_left.png"> </div>
+    <div id="right" class="mobile_controlls d-none" ontouchstart="touchDownRight()" ontouchend="touchUpRight()"> <img src="./img/arrow_right.png"> </div>
+    <div id="jump" class="mobile_controlls d-none" ontouchstart="touchDownJump()" ontouchend="touchUpJump()"> <img src="./img/jump.png"> </div>
+    <div id="throw" class="mobile_controlls d-none" ontouchstart="touchDownThrow()" ontouchend="touchUpThrow()"> <img src="./img/throw.png"> </div>
+
+    <div id="endScreen" class="start_end_screen d-none">
+        <img src="./img/5.Fondo/1.png" class="start_end_screen img_1">
+        <img src="./img/9.Intro _ Outro Image/_Game over_ screen/4.Game over!.png" class="start_end_screen img_2">
+        <a href="index.html" class="btn restart_mobile">RESTART</a>
+    </div>
+
+    <div id="youLostScreen" class="start_end_screen d-none">
+        <img src="./img/5.Fondo/1.png" class="start_end_screen img_1">
+        <img src="./img/9.Intro _ Outro Image/_Game over_ screen/2.oh no you lost!.png" class="start_end_screen img_2">
+        <a href="index.html" class="btn restart_mobile">RESTART</a>
+    </div>
+
+
+
 
 </body>
 

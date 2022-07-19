@@ -7,7 +7,9 @@ function init() {
     canvas = document.getElementById(`canvas`);
     world = new World(canvas, keyboard);
 
-    console.log(`My Character is`, world.character);
+    document.getElementById(`startBtn`).classList.remove(`trans`);
+    document.getElementById(`startBtn`).innerHTML = `Restart`;
+
 
 }
 
