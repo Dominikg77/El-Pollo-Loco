@@ -8,7 +8,8 @@ function init() {
     world = new World(canvas, keyboard);
 
     document.getElementById(`startBtn`).classList.remove(`trans`);
-    document.getElementById(`startBtn`).innerHTML = `Restart`;
+    document.getElementById(`startBtn`).classList.add(`d-none`);
+    document.getElementById('start_end_screen').classList.add('gameplaying');
 
 
 }
