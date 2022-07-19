@@ -2,9 +2,19 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgb(70, 69, 69);
 }
 
 canvas {
     background-color: black;
+    position: absolute;
+    top: 20%;
+}
+
+.d-none {
+    display: ;
+}
+
+.info {
+    position: relative;
+    width: 100%;
 }
