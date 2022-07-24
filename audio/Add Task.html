@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)http://127.0.0.1:5500/add-task.html -->
+<html lang="en"><input type="hidden" id="__yoroi_connector_api_injected_type" value="prod"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Task</title>
+    <link id="icon" rel="icon" href="./Add Task_files/logo.png">
+    <link rel="stylesheet" href="./Add Task_files/fonts.css">
+    <link rel="stylesheet" href="./Add Task_files/main.css">
+    <link rel="stylesheet" href="./Add Task_files/add-task.css">
+    <script src="./Add Task_files/main.js"></script>
+    <script src="./Add Task_files/addTask.js"></script>
+    <script src="./Add Task_files/mini_backend.js"></script>
+    <script>
+        setURL('https://gruppe-281.developerakademie.net/smallest_backend_ever');
+
+        async function load() {
+            await downloadFromServer();
+            allTasks = JSON.parse(backend.getItem('allTasks')) || [];
+        }
+    </script>
+<style type="text/css">
+@font-face {
+  font-weight: 400;
+  font-style:  normal;
+  font-family: 'Circular-Loom';
+
+  src: url('https://cdn.loom.com/assets/fonts/circular/CircularXXWeb-Book-cd7d2bcec649b1243839a15d5eb8f0a3.woff2') format('woff2');
+}
+
+@font-face {
+  font-weight: 500;
+  font-style:  normal;
+  font-family: 'Circular-Loom';
+
+  src: url('https://cdn.loom.com/assets/fonts/circular/CircularXXWeb-Medium-d74eac43c78bd5852478998ce63dceb3.woff2') format('woff2');
+}
+
+@font-face {
+  font-weight: 700;
+  font-style:  normal;
+  font-family: 'Circular-Loom';
+
+  src: url('https://cdn.loom.com/assets/fonts/circular/CircularXXWeb-Bold-83b8ceaf77f49c7cffa44107561909e4.woff2') format('woff2');
+}
+
+@font-face {
+  font-weight: 900;
+  font-style:  normal;
+  font-family: 'Circular-Loom';
+
+  src: url('https://cdn.loom.com/assets/fonts/circular/CircularXXWeb-Black-bf067ecb8aa777ceb6df7d72226febca.woff2') format('woff2');
+}</style></head>
+
+
+
+<body onload="init(), load()" cz-shortcut-listen="true">
+    <div w3-include-html="templates/sidebar.html">
+
+
+
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header</title>
+    <link rel="icon" href="http://127.0.0.1:5500/img/joinlogo.png">
+    <link rel="stylesheet" href="./Add Task_files/sidebar.css">
+    <link rel="stylesheet" href="./Add Task_files/fonts.css">
+
+
+
+
+    <div>
+
+        <div class="sidelbarMenu">
+            <div class="sidebar-menu-list">
+                <ul>
+                    <li>
+                        <a href="http://127.0.0.1:5500/board.html"> <img src="./Add Task_files/logo.png"> </a>
+                    </li>
+                    <li>
+                        <a href="http://127.0.0.1:5500/board.html"> Board</a>
+                    </li>
+                    <li>
+                        <a href="http://127.0.0.1:5500/backlog.html"> Backlog</a>
+                    </li>
+                    <li>
+                        <a href="http://127.0.0.1:5500/add-task.html">Add Task</a>
+                    </li>
+                    <li>
+                        <a href="http://127.0.0.1:5500/help.html">Help</a>
+                    </li>
+                </ul>
+            </div>
+
+
+
+            <div class="footer">
+                <div class="footer-links">
+                    <a href="http://127.0.0.1:5500/add-task.html#">Impressum</a>
+                    <a href="http://127.0.0.1:5500/add-task.html#">Datenschutz</a>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+<!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</div></div>
+    <!--Nur als Test mal etwas reingefügt, das mit dem Tempaltes funktioniert noch nicht zu 100%-->
+    <!--Mit dem Tempaltes wir es einfach überdekt, deswegen hat es  aktuell auch noch nach oben diesen abstand da einen Div dahinter ist-->
+    <div class="container">
+
+        <h3>Add Task</h3>
+        <div>
+            <p>Learning Management System Project</p>
+        </div>
+
+        <main class="main-addTask bg">
+            <div class="main-addTask">
+                <div class="row row-1">
+                    <div class="input">
+                        <label for="title">TITLE</label>
+                        <input class="inputfield" type="text" id="title" placeholder="Managment meeting preparation">
+                    </div>
+                    <div class="input">
+                        <label for="due date">DUE DATE</label>
+                        <input class="inputfield" type="date" id="date" value="">
+                    </div>
+                </div>
+                <div class="row row-2">
+                    <div class="input">
+                        <label for="category">CATERGORY</label>
+                        <div class="styled-select inputfield">
+                            <div class="border"></div>
+                            <select placeholder="Management" id="catergory">
+                        <option value="Management">Management</option>
+                        <option value="Software Development">Software Development</option>
+                        <option value="UX/UI Desing">UX/UI Desing</option>
+                        <option value="Human Resources">Human Resources</option>
+                    </select>
+                        </div>
+                    </div>
+                    <div class="input">
+                        <label for="urgency">URGENCY</label>
+                        <div class="styled-select inputfield">
+                            <div class="border"></div>
+                            <select id="urgency">
+                        <option value="High">High</option>
+                        <option value="Intermediate">Intermediate</option>
+                        <option value="Low">Low</option>
+                    </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row-3">
+                    <div class="textarea">
+                        <label class="input" for="text">DESCRIPTION</label>
+                        <textarea id="text" cols="30" rows="10" wrap="soft" placeholder="Enter the desrciption..."></textarea>
+                    </div>
+                    <div class="assingments">
+                        <h2>ASSIGNED TO</h2>
+                        <div class="profile-pictures" id="profile_pictures">
+                        </div>
+                        <div class="buttons">
+                            <img src="./Add Task_files/icon plus.png" onclick="openModal()" class="selectEmployee">
+
+                            <button class="btn btn-cancel" onclick="clearTask()">CANCEL</button>
+                            <button class="btn btn-create-task" onclick="createTask()">CREATE TASK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <div class="modal d-none" id="modal">
+            <div class="modal-header">
+                <div class="modal-title">Available Employees</div>
+                <button data-close-button="" class="close-button" onclick="closeModal()">×</button>
+            </div>
+            <div class="modal-body" id="modal-body">
+            </div>
+        </div>
+        <div id="overlay" class="d-none"></div>
+<!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</div></body><loom-container id="lo-engage-ext-container"><loom-shadow classname="resolved"></loom-shadow></loom-container><loom-container id="lo-companion-container"><loom-shadow classname="resolved"></loom-shadow></loom-container></html>

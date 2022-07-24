@@ -1,0 +1,382 @@
+.d-none {
+    display: none;
+}
+
+.main-addTask {
+    margin: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    position: relative;
+    margin-right: 20px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    width: 98%;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    position: relative;
+}
+
+label,
+h2 {
+    color: rgb(34, 49, 139);
+    font-weight: bold;
+    margin: 15px 0px 15px 0px
+}
+
+.inputfield {
+    width: 100%;
+    height: 65px;
+    font-size: 18px;
+    border-radius: 5px;
+    text-indent: 5px;
+    outline: none;
+    border: 1px solid hsl(0, 3%, 82%);
+    padding: 0;
+}
+
+.input input::placeholder {
+    color: grey;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    color: rgba(0, 0, 0, 0);
+    opacity: 1;
+    display: block;
+    background: url('../img/icons8-calendar-150.png') no-repeat;
+    width: 40px;
+    height: 40px;
+    border-width: thin;
+}
+
+.styled-select {
+    overflow: hidden;
+    overflow: -moz-hidden-unscrollable;
+    background: url('../img/chevron\ .png') no-repeat white;
+    background-position: 98% 56%;
+    display: inline-block;
+    position: relative;
+    width: 100%;
+}
+
+.border {
+    height: 100%;
+    width: 50px;
+    border-left: 1px solid hsl(0, 4%, 73%);
+    float: right;
+}
+
+.styled-select select {
+    background: transparent;
+    -webkit-appearance: none;
+    width: 100%;
+    height: 65px;
+    font-size: 11px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 18px;
+    text-indent: 5px;
+    outline: none;
+    border: none;
+}
+
+.row-3 {
+    display: flex;
+}
+
+.assingments {
+    width: 450px;
+}
+
+.textarea {
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    border-radius: 5px;
+    white-space: pre;
+}
+
+.textarea textarea {
+    font-size: 18px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    resize: none;
+    outline: none;
+    border: solid 1px rgb(210, 210, 212);
+}
+
+.assingments {
+    position: relative;
+}
+
+.profile-pictures {
+    width: 100%;
+    margin-bottom: 10px;
+    min-height: 120px;
+}
+
+.profile-picture {
+    max-width: 60px;
+    max-height: 60px;
+    border-radius: 50%;
+    margin-right: 5px;
+    border: white solid 4px;
+}
+
+.selectEmployee {
+    cursor: pointer;
+}
+
+.buttons {
+    float: right;
+    display: flex;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.buttons img {
+    width: 80px !important;
+    height: 80px !important;
+    object-fit: cover;
+}
+
+.btn {
+    padding: 15px;
+    font-size: 14px;
+    margin-left: 10px;
+    font-weight: bold;
+    font-family: 'Varela Round', sans-serif;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-cancel {
+    color: rgb(34, 49, 139);
+    background-color: transparent;
+}
+
+.btn-create-task {
+    color: white;
+    background-color: rgb(34, 49, 139);
+}
+
+.btn-create-task:hover {
+    color: rgb(12, 17, 44);
+    background-color: rgb(34, 49, 139);
+}
+
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.popup .popuptext {
+    visibility: hidden;
+    background-color: #fff;
+    color: rgb(34, 49, 139);
+    font-weight: bold;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 140%;
+    left: 50%;
+    margin-left: -80px;
+    padding: 3px;
+    box-shadow: 11px 9px 5px 0px grey;
+    border: 1px solid rgb(34, 49, 139);
+}
+
+.popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent;
+}
+
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 500ms ease-in-out;
+    animation: fadeIn 500ms ease-in-out;
+}
+
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 500ms ease-in-out;
+    animation: fadeIn 500ms ease-in-out;
+}
+
+.widthDadenschutz {
+    width: 90%;
+}
+
+
+/* Overlay style for chossing employees*/
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    border: 1px solid rgb(210, 210, 212);
+    border-radius: 10px;
+    z-index: 10;
+    background-color: white;
+    width: 600px;
+    max-width: 80%;
+}
+
+.modal-header {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgb(210, 210, 212);
+}
+
+.modal-title {
+    font-weight: bold;
+    font-size: 20px;
+    color: rgb(34, 49, 139);
+}
+
+.modal-header .close-button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.modal-body {
+    padding: 10px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+.modal-profile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(189, 189, 252);
+    margin-bottom: 5px;
+    border-radius: 5px;
+    padding: 5px;
+    width: 95%;
+    cursor: pointer;
+}
+
+.modal-profile:hover {
+    background-color: rgb(156, 172, 252);
+}
+
+.modal-profile-image {
+    width: 71spx;
+    height: 71px;
+    border-radius: 100%;
+    margin-right: 10px;
+    border: white solid 4px
+}
+
+.modal-profile-column1 {
+    display: flex;
+    align-items: center;
+}
+
+.modal-profile-column2 {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    margin-right: 5px;
+}
+
+#overlay {
+    position: absolute;
+    opacity: 1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+    z-index: 1;
+}
+
+
+/* Resposive styles */
+
+@media(max-width:1275px) {
+    .row {
+        flex-direction: column;
+        align-items: center;
+    }
+    .input {
+        width: 100%;
+    }
+    .textarea {
+        width: 100%;
+    }
+    .assingments {
+        width: 100%;
+    }
+    .styled-select {
+        background-position: 99% 56%;
+    }
+}
+
+@media(max-width:1000px) {
+    .border {
+        width: 45px;
+    }
+}
+
+@media(max-width:650px) {
+    .border {
+        width: 43px;
+    }
+    .heading1 {
+        margin-top: 80px;
+    }
+}
+
+@media(max-width:530px) {
+    .profile-pictures {
+        min-height: 220px;
+    }
+    .border {
+        width: 41px;
+    }
+    .buttons>img {
+        height: 50px;
+    }
+    .email {
+        display: none;
+    }
+}
+
+@media(max-width:430px) {
+    .border {
+        width: 39px;
+    }
+}

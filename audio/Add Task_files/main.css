@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+}
+
+h3 {
+    color: #22318B;
+    font-size: 30px;
+    font-weight: bolder;
+    margin-bottom: -5px;
+}
+
+p {
+    color: rgb(93, 93, 93);
+    font-size: 18px;
+}
+
+.bg {
+    background-color: #504f4f17;
+}
+
+.container {
+    margin-left: 300px;
+    padding-top: 100px;
+    padding-left: 50px;
+}
