@@ -1,6 +1,10 @@
 let canvas;
 let world;
 let keyboard = new Keyboard();
+let playMusic1 = new Audio('audio/music1.mp3');
+playMusic1.volume = 0.3;
+let playMusic2 = new Audio('audio/music2.mp3');
+playMusic2.volume = 0.3;
 
 
 function init() {
@@ -57,3 +61,46 @@ document.addEventListener("keyup", (event) => {
         keyboard.D = false;
     }
 });
+
+
+
+function music1() {
+    if (musicOn == false) {
+        musicOn = true;
+    } else {
+        musicOn = false;
+    }
+    playMusicFunction1();
+}
+
+
+
+function music2() {
+    if (musicOn == false) {
+        musicOn = true;
+    } else {
+        musicOn = false;
+    }
+    playMusicFunction2();
+}
+
+
+
+function playMusicFunction1() {
+    if (musicOn == true) {
+        playMusic1.play();
+    }
+    if (musicOn == false) {
+        playMusic1.pause();
+    }
+}
+
+
+function playMusicFunction2() {
+    if (musicOn == true) {
+        playMusic2.play();
+    }
+    if (musicOn == false) {
+        playMusic2.pause();
+    }
+}

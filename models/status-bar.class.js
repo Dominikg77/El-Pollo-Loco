@@ -31,8 +31,10 @@ class Statusbar extends DrawableObject {
     percentage = 100;
     amount = 0;
 
-    constructor(type) {
+    world;
+    constructor(type, world) {
         super();
+        this.world = world
         let x = type;
         this.x();
     }
