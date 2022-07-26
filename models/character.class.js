@@ -98,13 +98,4 @@ class Character extends MovableObject {
         this.speedY = 25;
     };
 
-    /**
-     * This function is used to return, that a movable object is colliding to the character or not.
-     */
-    characterIsColiding(mo) {
-        return this.x + this.width > mo.x &&
-            (this.y + this.characterHeightSubtraction) + (this.height - this.characterHeightSubtraction) > mo.y &&
-            this.x < mo.x &&
-            (this.y + this.characterHeightSubtraction) < mo.y + mo.height;
-    }
 }

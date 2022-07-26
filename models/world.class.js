@@ -52,7 +52,7 @@ class World {
                 this.statusBarCoin.amount++;
                 this.statusBarCoin.setAmount();
                 this.level.coin.splice(this.level.coin.indexOf(coin), 1);
-                console.log('Collision with ', coin);
+                console.log('Collision with ');
                 // this.coinSound.play();
             }
         });
