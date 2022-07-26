@@ -30,21 +30,31 @@ class Statusbar extends DrawableObject {
 
     percentage = 100;
     amount = 0;
-
     world;
+
     constructor(type, world) {
         super();
         this.world = world
         let x = type;
-        this.x();
+        if (x = `health`) {
+            this.health();
+        }
+        if (x = `coin`) {
+            this.coin();
+        }
+        //if (x = `bottle`) {
+        //  this.bottle();
+        // }
+
     }
+
 
     health() {
         this.loadImages(this.IMAGES_Health);
         this.x = 50;
         this.y = 5;
         this.width = 200;
-        this.height = 60;
+        this.height = 40;
         this.setPrecentage(100);
     }
 
@@ -77,7 +87,7 @@ class Statusbar extends DrawableObject {
         this.x = 50;
         this.y = 70;
         this.width = 200;
-        this.height = 60;
+        this.height = 40;
     }
 
     setAmountCoin() {
@@ -91,11 +101,11 @@ class Statusbar extends DrawableObject {
         this.x = 50;
         this.y = 90;
         this.width = 200;
-        this.height = 60;
+        this.height = 40;
     }
 
     setAmountBottle() {
-        let path = this.IMAGES_Coin[this.resolveImageIndexAmount()];
+        let path = this.IMAGES_Bottle[this.resolveImageIndexAmount()];
         this.img = this.imageCache[path];
     }
 

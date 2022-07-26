@@ -6,9 +6,9 @@ class World {
     ctx;
     keyboard;
     camera_x = 0;
-    statusBarHealth = new Statusbar(`Health`);
-    statusBarCoin = new Statusbar(`Coin`);
-    statusBarBottle = new Statusbar(`Bottle`);
+    statusBarHealth = new Statusbar(`health`);
+    statusBarCoin = new Statusbar(`coin`);
+    statusBarBottle = new Statusbar(`bottle`);
     throwableObjects = [];
 
     constructor(canvas, keyboard) {
@@ -42,6 +42,18 @@ class World {
             if (this.character.isColliding(enemy)) {
                 this.character.hit();
                 this.statusBar.setPrecentage(this.character.energy);
+            }
+        });
+    }
+
+    checkCollisionWithCoin() {
+        this.level.coin.forEach((coin) => {
+            if (this.character.characterIsColiding(coin)) {
+                this.statusBarCoin.amount++;
+                this.statusBarCoin.setAmount();
+                this.level.coin.splice(this.level.coin.indexOf(coin), 1);
+                console.log('Collision with ', coin);
+                // this.coinSound.play();
             }
         });
     }
@@ -107,4 +119,5 @@ class World {
         this.ctx.restore();
 
     }
+
 }

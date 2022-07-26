@@ -5,6 +5,7 @@ let playMusic1 = new Audio('audio/music1.mp3');
 playMusic1.volume = 0.3;
 let playMusic2 = new Audio('audio/music2.mp3');
 playMusic2.volume = 0.3;
+let musicOn = false;
 
 
 function init() {
