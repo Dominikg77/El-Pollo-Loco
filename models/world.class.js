@@ -6,9 +6,9 @@ class World {
     ctx;
     keyboard;
     camera_x = 0;
-    statusBarHealth = new Statusbar(`health`);
-    statusBarCoin = new Statusbar(`coin`);
-    statusBarBottle = new Statusbar(`bottle`);
+    statusBarHealth = new statusBarHealth(`health`);
+    statusBarCoin = new StatusbarCoin(`coin`);
+    statusBarBottle = new StatusbarBottle(`bottle`);
     throwableObjects = [];
 
     constructor(canvas, keyboard) {
@@ -41,7 +41,7 @@ class World {
         this.level.enemies.forEach((enemy) => {
             if (this.character.isColliding(enemy)) {
                 this.character.hit();
-                this.statusBar.setPrecentage(this.character.energy);
+                this.statusBarHealth.setPrecentage(this.character.energy);
             }
         });
     }
