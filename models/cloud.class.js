@@ -1,16 +1,20 @@
 class Cloud extends MovableObject {
-    y = 10;
+
+    y = 30;
     width = 500;
-    heigth = 250;
+    height = 250;
 
-    constructor() { // wird zuerst ausgeführt
-        super().loadImage(`img/5_background/layers/4_clouds/1.png`); // von der übergeordneten Classe eine Funktion aufrufen 
-        this.x = Math.random() * 500; // bei Variablen braucht es kein super() // Math.random gibt eine Zahl von 0-1 heraus deshalb mal 500
+    constructor() {
+        super().loadImage('./img/5.Fondo/Capas/4.nubes/1.png');
+        this.x = Math.random() * 500;
         this.animate();
-    };
-
-    animate() {
-        this.moveleft();
     }
 
+
+    /**
+     * This function is used to animate the movement of the clouds.
+     */
+    animate() {
+        this.moveLeft();
+    }
 }
