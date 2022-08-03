@@ -1,3 +1,18 @@
+/**
+ * This function is used to displays correctly in the browser Opera.
+ */
+
+function checkOrientation() {
+    if (window.matchMedia("(orientation: landscape)").matches) {
+        if (window.innerHeight < 480) {
+            newHeight = window.innerHeight;
+            document.getElementById('canvas').style.height = `${newHeight}px`;
+        }
+    } else {
+        document.getElementById('canvas').style.height = `100%`;
+    }
+}
+
 let canvas;
 let world;
 let keyboard = new Keyboard();
