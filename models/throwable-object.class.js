@@ -6,14 +6,29 @@ class ThrowableObject extends MovableObject {
         this.y = y;
         this.height = 60;
         this.width = 40;
-        this.throw();
+        this.throwRight();
+        this.throwLeft();
     }
 
 
     /**
-     * This function is used to throw a bottle.
+     * This function is used to throw a bottle right.
      */
-    throw () {
+    throwRight() {
+        this.otherDirection = false;
+        this.speedY = 30;
+        this.applyGravity();
+        this.loadImage(`./img/6.botella/muestra.gif`);
+        setInterval(() => {
+            this.x += 15;
+        }, 25);
+    }
+
+    /**
+     * This function is used to throw a bottle left.
+     */
+    throwLeft() {
+        this.otherDirection = true;
         this.speedY = 30;
         this.applyGravity();
         setInterval(() => {

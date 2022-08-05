@@ -176,6 +176,7 @@ function music1() {
         musicOn = true;
     } else {
         musicOn = false;
+        playMusicFunction2();
     }
     playMusicFunction1();
 }
@@ -189,6 +190,7 @@ function music2() {
         musicOn = true;
     } else {
         musicOn = false;
+        playMusicFunction1();
     }
     playMusicFunction2();
 }
