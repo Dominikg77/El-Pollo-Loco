@@ -1,21 +1,21 @@
 class ThrowableObject extends MovableObject {
 
     IMAGES_FLYING = [
-        'img/6.botella/Rotaciขn/Mesa de trabajo 1 copia 3.png',
-        'img/6.botella/Rotaciขn/Mesa de trabajo 1 copia 4.png',
-        'img/6.botella/Rotaciขn/Mesa de trabajo 1 copia 5.png',
-        'img/6.botella/Rotaciขn/Mesa de trabajo 1 copia 6.png',
+        'img/6.botella/Rotación/Mesa de trabajo 1 copia 3.png',
+        'img/6.botella/Rotación/Mesa de trabajo 1 copia 4.png',
+        'img/6.botella/Rotación/Mesa de trabajo 1 copia 5.png',
+        'img/6.botella/Rotación/Mesa de trabajo 1 copia 6.png'
     ];
+
 
     IMAGES_SHATTERING = [
-        'img/6.botella/Rotaciขn/Splash de salsa/Mesa de trabajo 1 copia 7.png',
-        'img/6.botella/Rotaciขn/Splash de salsa/Mesa de trabajo 1 copia 8.png',
-        'img/6.botella/Rotaciขn/Splash de salsa/Mesa de trabajo 1 copia 9.png',
-        'img/6.botella/Rotaciขn/Splash de salsa/Mesa de trabajo 1 copia 10.png',
-        'img/6.botella/Rotaciขn/Splash de salsa/Mesa de trabajo 1 copia 11.png',
-        'img/6.botella/Rotaciขn/Splash de salsa/Mesa de trabajo 1 copia 12.png'
+        'img/6.botella/Rotación/Splash de salsa/Mesa de trabajo 1 copia 7.png',
+        'img/6.botella/Rotación/Splash de salsa/Mesa de trabajo 1 copia 8.png',
+        'img/6.botella/Rotación/Splash de salsa/Mesa de trabajo 1 copia 9.png',
+        'img/6.botella/Rotación/Splash de salsa/Mesa de trabajo 1 copia 10.png',
+        'img/6.botella/Rotación/Splash de salsa/Mesa de trabajo 1 copia 11.png',
+        'img/6.botella/Rotación/Splash de salsa/Mesa de trabajo 1 copia 12.png'
     ];
-
 
 
     constructor(x, y) {
@@ -23,6 +23,7 @@ class ThrowableObject extends MovableObject {
         this.loadImages(this.IMAGES_SHATTERING);
         this.loadImage(this.IMAGES_FLYING[0]);
         this.x = x;
+        Object.freeze(this.x);
         this.y = y;
         this.height = 60;
         this.width = 40;
@@ -35,7 +36,7 @@ class ThrowableObject extends MovableObject {
      * This function is used to throw a bottle.
      */
     throw () {
-        this.speedY = 30;
+        this.speedY = 20;
         this.applyGravity();
         setInterval(() => {
             if (this.isAboveGround()) {
@@ -62,7 +63,6 @@ class ThrowableObject extends MovableObject {
                         world.throwableObjects.splice(index, 1);
                     }, 400);
                 }
-
                 this.playAnimation(this.IMAGES_SHATTERING);
             }
         }, 100);
