@@ -100,8 +100,16 @@ class World {
         if (this.keyboard.SPACE) {
             if (this.statusbarBottles.amount > 0) {
                 this.statusbarBottles.amount--;
-                let bottle = new ThrowableObject(this.character.x + this.character.width, this.character.y + this.character.height / 2);
-                this.throwableObjects.push(bottle);
+                if (this.character.otherDirection == true) {
+                    console.log('throw left');
+                    let bottle = new ThrowableObjectLeft(this.character.x, this.character.y + this.character.height / 2);
+                    this.throwableObjects.push(bottle);
+                    this.checkCollisionBottleAndEnemy();
+                }
+                if (this.character.otherDirection == false) {
+                    let bottle = new ThrowableObject(this.character.x + this.character.width, this.character.y + this.character.height / 2);
+                    this.throwableObjects.push(bottle);
+                }
                 this.statusbarBottles.setAmount();
                 this.checkCollisionBottleAndEnemy();
             }
