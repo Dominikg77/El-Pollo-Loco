@@ -16,14 +16,17 @@ class MovableObject extends DrawableObject {
     }
 
 
+
     /**
-     * This function is used to return, that a movable object is colliding to others or not.
+     * 
+     * checking if object is colliding with enemy
+     * @param {object} mo 
+     * @returns object is colliding with enemy
      */
     isColliding(mo) {
-        return this.x + this.width > mo.x &&
-            this.y + this.height > mo.y &&
-            this.x < mo.x &&
-            this.y < mo.y + mo.height;
+        return (this.x + this.width - this.offsetRight) >= (mo.x + mo.offsetLeft) && (this.x - this.offsetLeft) <= (mo.x + mo.width - mo.offsetRight) &&
+            (this.y + this.height - this.offsetBottom) >= (mo.y + mo.offsetTop) &&
+            (this.y + this.offsetTop) <= (mo.y + mo.height - mo.offsetBottom);
     }
 
 
@@ -80,16 +83,15 @@ class MovableObject extends DrawableObject {
 
 
     /**
-     * This function is used to return, that a object is above a special hight (y) or not. 
+     * This function is used to return, that a object is above a special hight (y) or not and the high of the bottle. 
      */
     isAboveGround() {
-        if (this instanceof ThrowableObject) { // ThrowableObject should always fall.
-            return true;
-        } else {
+        if (this instanceof Character) {
             return this.y < 175;
+        } else if (this instanceof ThrowableObject) {
+            return this.y < 375;
         }
     }
-
 
     /**
      * This function is used to load a single image.
