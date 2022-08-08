@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://127.0.0.1:5500/index.html -->
+<html lang="en"><input type="hidden" id="__yoroi_connector_api_injected_type" value="prod"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./EL-Pollo-Loco_files/style.css">
+    <link rel="icon" type="image/x-icon" href="http://127.0.0.1:5500/img/3.Secuencias_Enemy_b%C3%A1sico/Versi%C3%B3n_Gallinita%20(estas%20salen%20por%20orden%20de%20la%20gallina%20gigantona)/1.Ga_paso_derecho.png">
+    <script src="./EL-Pollo-Loco_files/drawable-object.class.js"></script>
+    <script src="./EL-Pollo-Loco_files/movable-object.class.js"></script>
+    <script src="./EL-Pollo-Loco_files/character.class.js"></script>
+    <script src="./EL-Pollo-Loco_files/chicken.cless.js"></script>
+    <script src="./EL-Pollo-Loco_files/chick.class.js"></script>
+    <script src="./EL-Pollo-Loco_files/bottle.class.js"></script>
+    <script src="./EL-Pollo-Loco_files/coin.class.js"></script>
+    <script src="./EL-Pollo-Loco_files/statusbar-energy.class.js"></script>
+    <script src="./EL-Pollo-Loco_files/statusbar-bottles.class.js"></script>
+    <script src="./EL-Pollo-Loco_files/statusbar-coins.class.js"></script>
+    <script src="./EL-Pollo-Loco_files/world.class.js"></script>
+    <script src="./EL-Pollo-Loco_files/cloud.class.js"></script>
+    <script src="./EL-Pollo-Loco_files/backgroubd-object.class.js"></script>
+    <script src="./EL-Pollo-Loco_files/keyboard.class.js"></script>
+    <script src="./EL-Pollo-Loco_files/level.class.js"></script>
+    <script src="./EL-Pollo-Loco_files/endboss.class.js"></script>
+    <script src="./EL-Pollo-Loco_files/level1.js"></script>
+    <script src="./EL-Pollo-Loco_files/throwable-object.class.js"></script>
+    <script src="./EL-Pollo-Loco_files/throwable-object-left.class.js"></script>
+    <script src="./EL-Pollo-Loco_files/game.js"></script>
+    <title>EL-Pollo-Loco</title>
+<style type="text/css">
+@font-face {
+  font-weight: 400;
+  font-style:  normal;
+  font-family: 'Circular-Loom';
+
+  src: url('https://cdn.loom.com/assets/fonts/circular/CircularXXWeb-Book-cd7d2bcec649b1243839a15d5eb8f0a3.woff2') format('woff2');
+}
+
+@font-face {
+  font-weight: 500;
+  font-style:  normal;
+  font-family: 'Circular-Loom';
+
+  src: url('https://cdn.loom.com/assets/fonts/circular/CircularXXWeb-Medium-d74eac43c78bd5852478998ce63dceb3.woff2') format('woff2');
+}
+
+@font-face {
+  font-weight: 700;
+  font-style:  normal;
+  font-family: 'Circular-Loom';
+
+  src: url('https://cdn.loom.com/assets/fonts/circular/CircularXXWeb-Bold-83b8ceaf77f49c7cffa44107561909e4.woff2') format('woff2');
+}
+
+@font-face {
+  font-weight: 900;
+  font-style:  normal;
+  font-family: 'Circular-Loom';
+
+  src: url('https://cdn.loom.com/assets/fonts/circular/CircularXXWeb-Black-bf067ecb8aa777ceb6df7d72226febca.woff2') format('woff2');
+}</style></head>
+
+<body cz-shortcut-listen="true">
+
+
+    <div id="startScreen" class="start_end_screen dd d-none">
+        <img src="./EL-Pollo-Loco_files/Opción2.png" class="start_end_screen">
+        <div id="infoBox" class="info_box d-none">
+            <div>
+                <h4>Controlls</h4>
+                <p>
+                    &lt;: walk left</p>
+                        <p> &gt;: walk right</p>
+                        <p> UP: jump</p>
+                        <p> SPACE: throw bottle</p>
+                        <br>
+                        <h4>Mobile</h4>
+                        <p> <img src="./EL-Pollo-Loco_files/jump.png">: jump</p>
+                        <p> <img src="./EL-Pollo-Loco_files/throw.png">: throw bottle</p>
+                        <a href="http://127.0.0.1:5500/impressum.html" target="_blank">Impressum</a>
+            </div>
+        </div>
+        <button id="music1" class="btn" onclick="music1()">MUSIC</button>
+        <button id="music2" class="btn" onclick="music2()">MUSIC</button>
+        <button id="infoBtn" class="btn" onclick="info()">INFO</button>
+        <button id="btn" class="btn d-none" onclick="init()">START</button>
+    </div>
+
+    <canvas class="" width="720" height="480" id="canvas">
+    </canvas>
+
+    <div id="left" class="mobile_controlls" ontouchstart="touchDownLeft()" ontouchend="touchUpLeft()">
+        <img src="./EL-Pollo-Loco_files/arrow_left.png"> </div>
+    <div id="right" class="mobile_controlls" ontouchstart="touchDownRight()" ontouchend="touchUpRight()"> <img src="./EL-Pollo-Loco_files/arrow_right.png"> </div>
+    <div id="jump" class="mobile_controlls" ontouchstart="touchDownJump()" ontouchend="touchUpJump()"> <img src="./EL-Pollo-Loco_files/jump.png"> </div>
+    <div id="throw" class="mobile_controlls" ontouchstart="touchDownThrow()" ontouchend="touchUpThrow()"> <img src="./EL-Pollo-Loco_files/throw.png"> </div>
+
+    <div id="endScreen" class="start_end_screen d-none">
+        <img src="./EL-Pollo-Loco_files/1.png" class="start_end_screen img_1">
+        <img src="./EL-Pollo-Loco_files/4.Game over!.png" class="start_end_screen img_2">
+        <a href="http://127.0.0.1:5500/index.html" class="btn restart_mobile">RESTART</a>
+    </div>
+
+    <div id="youLostScreen" class="start_end_screen d-none">
+        <img src="./EL-Pollo-Loco_files/1.png" class="start_end_screen img_1">
+        <img src="./EL-Pollo-Loco_files/2.oh no you lost!.png" class="start_end_screen img_2">
+        <a href="http://127.0.0.1:5500/index.html" class="btn restart_mobile">RESTART</a>
+    </div>
+
+<!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</body><loom-container id="lo-engage-ext-container"><loom-shadow classname="resolved"></loom-shadow></loom-container><loom-container id="lo-companion-container"><loom-shadow classname="resolved"></loom-shadow></loom-container></html>
