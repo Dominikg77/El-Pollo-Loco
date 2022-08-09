@@ -109,14 +109,11 @@ class Character extends MovableObject {
             this.jumpSound.play();
         } else if (this.world.keyboard.RIGHT || this.world.keyboard.LEFT) {
             this.playAnimation(this.IMAGES_WALKING);
-        } else {
-            setTimeout(() => {
-                this.playAnimation(this.IMAGES_IDLE);
-            }, 6000);
+        } else if (this.js.game.lastmove < 5) {
+            this.playAnimation(this.IMAGES_IDLE);
         }
 
     }
-
 
 
     /**
