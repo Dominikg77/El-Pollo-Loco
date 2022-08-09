@@ -60,6 +60,14 @@ class MovableObject extends DrawableObject {
         return timePassed < 1;
     }
 
+    /**
+     * This function is used to return, that the character is idel or not.
+     */
+    isIdle() {
+        let timePassed = new Date().getTime() - this.world.keyboard.lastMove;
+        return timePassed > 2000;
+    }
+
 
     /**
      * This function is used to return, that the character or enemy is dead or not.
