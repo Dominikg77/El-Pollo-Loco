@@ -3,30 +3,41 @@ body {
     background-color: rgba(128, 128, 128, 0.621);
 }
 
-.imprint {
+.container {
     height: 80vh;
     margin-left: 20%;
     margin-right: 20%;
     margin-top: 50px;
     margin-bottom: 100px;
+    display: flex;
+    justify-content: space-between;
 }
 
-h1 {
+h1,
+h2 {
     color: red;
 }
 
-p {
-    font-size: 16px;
+h4 {
+    font-size: 28px;
 }
 
 @media(max-width:875px) {
-    .imprint {
+    .container {
         margin-left: 50px;
         margin-right: 50px;
     }
     h1 {
-        font-size: 24px;
         text-align: center;
+        font-size: 24px;
+    }
+    h2 {
+        font-size: 20px;
+        text-align: center;
+    }
+    h3,
+    h4 {
+        font-size: 18px;
     }
     p {
         font-size: 14px;
