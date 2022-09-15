@@ -3,7 +3,7 @@ class Endboss extends MovableObject {
     height = 450;
     width = 400;
     y = 10;
-    energy = 100;
+    energy = 150;
     contactWithCharacter = false;
 
     IMAGES_ANGRY = [
@@ -68,11 +68,11 @@ class Endboss extends MovableObject {
         if (this.energy < 0) {
             this.energy = 0;
         }
-        let tt = setInterval(() => {
+        let intervallId = setInterval(() => {
             this.playAnimation(this.IMAGES_HURTING);
         }, 410);
         setTimeout(() => {
-            clearInterval(tt);
+            clearInterval(intervallId);
         }, 1000);
     }
 
@@ -100,16 +100,16 @@ class Endboss extends MovableObject {
      * This function is used to animate the dead of the endboss and end the game.
      */
     endbossDies() {
-        let tt = setInterval(() => {
+        let intervallId = setInterval(() => {
             this.playAnimation(this.IMAGES_DEAD);
-        }, 350);
+        }, 100);
 
         setTimeout(() => {
-            clearInterval(tt);
+            clearInterval(intervallId);
             document.getElementById('canvas').classList.add('d-none');
             document.getElementById('startScreen').classList.add('d-none');
             document.getElementById('endScreen').classList.remove('d-none');
-        }, 1000);
+        }, 1200);
     }
 
 
@@ -135,7 +135,7 @@ class Endboss extends MovableObject {
                 this.playAnimation(this.IMAGES_WALKING);
                 this.endbossMoveLeft();
             }
-        }, 210);
+        }, 360);
 
     }
 }

@@ -32,23 +32,24 @@ canvas {
     color: rgba(252, 236, 7, 0.8);
     border-radius: 10px;
     position: absolute;
-    bottom: 5%;
+    bottom: 8%;
     right: 10%;
     z-index: 10;
     border: none;
 }
 
 #infoBtn {
+    bottom: 8%;
     left: 10%;
 }
 
 #music1 {
-    top: 10%;
+    top: 8%;
     left: 10%;
 }
 
 #music2 {
-    top: 10%;
+    top: 8%;
     right: 10% !important;
 }
 
@@ -59,7 +60,9 @@ canvas {
 
 .info_box {
     position: absolute;
-    bottom: 10.6%;
+    bottom: 25%;
+    top: 25%;
+    left: 9%;
     background-color: rgba(6, 76, 168, 0.7);
     color: rgba(252, 236, 7, 0.8);
     display: flex;
@@ -150,8 +153,42 @@ a {
     }
 }
 
-@media only screen and (max-width: 550px) {
-    .dd {
-        background-color: black;
+@media only screen and (max-width: 600px) {
+    .start_end_screen {
+        display: none;
     }
+}
+
+.mobile-screen {
+    background-color: black;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.mobile-screen-container {
+    margin-top: 75px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+}
+
+.mobile-screen h4 {
+    color: red;
+    font-size: 36px;
+}
+
+.mobile-screen p {
+    color: white;
+    text-align: center;
+    margin-top: 36px;
+}
+
+.mobile-screen-container img {
+    width: 200px;
+    height: 130px;
+    border-radius: 15px;
+    object-fit: cover;
 }

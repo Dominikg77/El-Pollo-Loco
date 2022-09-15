@@ -98,22 +98,20 @@ class World {
      * This function is used to throw a bottle, if the character has one.
      */
     checkTrowableObjects() {
-        if (this.keyboard.SPACE) {
-            if (this.statusbarBottles.amount > 0) {
-                this.statusbarBottles.amount--;
-                if (this.character.otherDirection == true) {
-                    console.log('throw left');
-                    let bottle = new ThrowableObjectLeft(this.character.x, this.character.y + this.character.height / 2);
-                    this.throwableObjects.push(bottle);
-                    this.checkCollisionBottleAndEnemy();
-                }
-                if (this.character.otherDirection == false) {
-                    let bottle = new ThrowableObject(this.character.x + this.character.width, this.character.y + this.character.height / 2);
-                    this.throwableObjects.push(bottle);
-                }
-                this.statusbarBottles.setAmount();
+        if (this.keyboard.SPACE && this.statusbarBottles.amount > 0) {
+            this.statusbarBottles.amount--;
+            if (this.character.otherDirection == true) {
+                let bottle = new ThrowableObjectLeft(this.character.x, this.character.y + this.character.height / 2);
+                this.throwableObjects.push(bottle);
                 this.checkCollisionBottleAndEnemy();
             }
+            if (this.character.otherDirection == false) {
+                let bottle = new ThrowableObject(this.character.x + this.character.width, this.character.y + this.character.height / 2);
+                this.throwableObjects.push(bottle);
+            }
+            this.statusbarBottles.setAmount();
+            this.checkCollisionBottleAndEnemy();
+
         }
     }
 
@@ -128,7 +126,7 @@ class World {
                 this.statusbarBottles.amount++;
                 this.statusbarBottles.setAmount();
                 this.level.bottles.splice(this.level.bottles.indexOf(bottle), 1);
-                console.log('Collision with ', bottle);
+
                 this.bottleSound.play();
             }
         });
@@ -145,7 +143,6 @@ class World {
                 this.statusbarCoins.amount++;
                 this.statusbarCoins.setAmount();
                 this.level.coins.splice(this.level.coins.indexOf(coin), 1);
-                console.log('Collision with ', coin);
                 this.coinSound.play();
             }
         });
@@ -160,7 +157,6 @@ class World {
         this.hitChickenSound.volume = 0.65;
         this.level.enemies.forEach((enemy) => {
             if (this.character.isColliding(enemy) && this.character.isAboveGround()) {
-                console.log('chicken dead');
                 enemy.kill();
                 this.hitChickenSound.play();
             }
@@ -192,7 +188,6 @@ class World {
         this.level.endboss.forEach((endboss) => {
             if (this.character.x > 1800) {
                 endboss.letEndbossWalk();
-                console.log('Contact with endboss')
             }
             if (endboss.x < 0) {
                 this.character.characterDies();
