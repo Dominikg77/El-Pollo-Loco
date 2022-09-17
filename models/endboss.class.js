@@ -3,7 +3,7 @@ class Endboss extends MovableObject {
     height = 450;
     width = 400;
     y = 10;
-    energy = 150;
+    energy = 110;
     contactWithCharacter = false;
 
     IMAGES_ANGRY = [
