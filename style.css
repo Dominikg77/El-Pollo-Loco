@@ -8,11 +8,33 @@ body {
 }
 
 canvas {
-    background-color: black;
     display: block;
+    margin-top: 15%;
+    left: 20%;
+    height: 60vh;
+    width: 60%;
+    max-height: 480px;
+    min-width: 680px;
+    position: absolute;
+    border-radius: 20px;
+    box-shadow: 5px 5px 13px 9px #4d4d4d;
+}
+
+.fullscreen {
+    margin-top: 0%;
+    left: 0%;
+    border-radius: 0px;
     height: 100vh;
     width: 100%;
-    position: relative;
+    position: absolute;
+    z-index: 5;
+}
+
+.bg-game {
+    background-image: url('img/complete_background.jpg');
+    height: 100vh;
+    width: 100vw;
+    z-index: 2;
 }
 
 .start_end_screen {
@@ -24,7 +46,7 @@ canvas {
 
 .btn {
     width: 200px;
-    height: 70px;
+    height: 80px;
     text-align: center;
     font-size: 40px;
     font-weight: bold;
@@ -33,24 +55,28 @@ canvas {
     border-radius: 10px;
     position: absolute;
     bottom: 8%;
-    right: 10%;
+    right: 12%;
     z-index: 10;
     border: none;
 }
 
 #infoBtn {
     bottom: 8%;
-    left: 10%;
+    left: 12%;
 }
 
 #music1 {
     top: 8%;
-    left: 10%;
+    left: 12%;
 }
 
 #music2 {
     top: 8%;
-    right: 10% !important;
+    right: 12% !important;
+}
+
+#btn2 {
+    bottom: 20%;
 }
 
 .btn:hover {
@@ -151,15 +177,26 @@ a {
     .restart_mobile {
         left: 38%;
     }
+    canvas {
+        height: 50vh;
+        width: 80%;
+        left: 10%;
+        max-height: none;
+        min-width: 480px;
+    }
 }
 
 @media only screen and (max-width: 600px) {
     .start_end_screen {
         display: none;
     }
+    .bg-game {
+        display: none;
+    }
 }
 
 .mobile-screen {
+    position: relative;
     background-color: black;
     height: 100vh;
     width: 100vw;
@@ -191,4 +228,24 @@ a {
     height: 130px;
     border-radius: 15px;
     object-fit: cover;
+}
+
+.input-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    bottom: 17%;
+    right: 13%;
+    z-index: 99;
+    color: rgb(5, 5, 5);
+    font-size: 18px;
+}
+
+.input-container div {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: wheat;
+    padding: 5px;
+    border-radius: 10px;
+    font-weight: 900;
 }

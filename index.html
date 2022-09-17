@@ -54,38 +54,48 @@
         <button id="music1" class="btn" onclick="music1()">MUSIC</button>
         <button id="music2" class="btn" onclick="music2()">MUSIC</button>
         <button id="infoBtn" class="btn" onclick="info()">INFO</button>
-        <button id="btn" class="btn" onclick="init()">START</button>
-    </div>
+        <button id="btn" class="btn" onclick="init(), screensize()">START</button>
+        <div class="input-container">
+            <div>
+                <input name="screen" id="rd1" class="input" type="radio" checked value="FULL">FULL SCREEN</input>
+            </div>
+            <div>
+                <input name="screen" id="rd2" class="input" type="radio" value="SMALL">SMALL SCREEN</input>
+            </div>
 
-    <canvas class="d-none" width="720" height="480" id="canvas">
+        </div>
+
+    </div>
+    <div id="bg" class="bg-game">
+        <canvas class="d-none fullscreen" width="720" height="480" id="canvas">
     </canvas>
 
-    <div id="left" class="mobile_controlls d-none" ontouchstart="touchDownLeft()" ontouchend="touchUpLeft()">
-        <img src="./img/arrow_left.png"> </div>
-    <div id="right" class="mobile_controlls d-none" ontouchstart="touchDownRight()" ontouchend="touchUpRight()"> <img src="./img/arrow_right.png"> </div>
-    <div id="jump" class="mobile_controlls d-none" ontouchstart="touchDownJump()" ontouchend="touchUpJump()"> <img src="./img/jump.png"> </div>
-    <div id="throw" class="mobile_controlls d-none" ontouchstart="touchDownThrow()" ontouchend="touchUpThrow()"> <img src="./img/throw.png"> </div>
+        <div id="left" class="mobile_controlls d-none" ontouchstart="touchDownLeft()" ontouchend="touchUpLeft()">
+            <img src="./img/arrow_left.png"> </div>
+        <div id="right" class="mobile_controlls d-none" ontouchstart="touchDownRight()" ontouchend="touchUpRight()"> <img src="./img/arrow_right.png"> </div>
+        <div id="jump" class="mobile_controlls d-none" ontouchstart="touchDownJump()" ontouchend="touchUpJump()"> <img src="./img/jump.png"> </div>
+        <div id="throw" class="mobile_controlls d-none" ontouchstart="touchDownThrow()" ontouchend="touchUpThrow()"> <img src="./img/throw.png"> </div>
 
-    <div id="endScreen" class="start_end_screen d-none">
-        <img src="./img/5.Fondo/1.png" class="start_end_screen img_1">
-        <img src="./img/9.Intro _ Outro Image/_Game over_ screen/4.Game over!.png" class="start_end_screen img_2">
-        <a href="index.html" class="btn restart_mobile">RESTART</a>
-    </div>
+        <div id="endScreen" class="start_end_screen d-none">
+            <img src="./img/5.Fondo/1.png" class="start_end_screen img_1">
+            <img src="./img/9.Intro _ Outro Image/_Game over_ screen/4.Game over!.png" class="start_end_screen img_2">
+            <a href="index.html" class="btn restart_mobile">RESTART</a>
+        </div>
 
-    <div id="youLostScreen" class="start_end_screen d-none">
-        <img src="./img/5.Fondo/1.png" class="start_end_screen img_1">
-        <img src="./img/9.Intro _ Outro Image/_Game over_ screen/2.oh no you lost!.png" class="start_end_screen img_2">
-        <a href="index.html" class="btn restart_mobile">RESTART</a>
-    </div>
+        <div id="youLostScreen" class="start_end_screen d-none">
+            <img src="./img/5.Fondo/1.png" class="start_end_screen img_1">
+            <img src="./img/9.Intro _ Outro Image/_Game over_ screen/2.oh no you lost!.png" class="start_end_screen img_2">
+            <a href="index.html" class="btn restart_mobile">RESTART</a>
+        </div>
 
-    <div class="mobile-screen">
-        <div class="mobile-screen-container">
-            <H4>Achtung</H4>
-            <img class="mobile-img" src="img/handy quer.jpg">
-            <p>Um EL-Pollo-Loco auf dem Mobilen Endgerät zu spielen, bitte Handy Drehen so das es im Querformat ist</p>
+        <div class="mobile-screen" id="mobilescreen">
+            <div class="mobile-screen-container">
+                <H4>Achtung</H4>
+                <img class="mobile-img" src="img/handy quer.jpg">
+                <p>Um EL-Pollo-Loco auf dem Mobilen Endgerät zu spielen, bitte Handy Drehen so das es im Querformat ist</p>
+            </div>
         </div>
     </div>
-
 </body>
 
 </html>

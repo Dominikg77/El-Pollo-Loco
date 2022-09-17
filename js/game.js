@@ -30,6 +30,27 @@ function init() {
     world = new World(canvas, keyboard);
     start();
 }
+/**
+ * This function is there to switch between from full screen to the small screen
+ * rd1 = fullscreen
+ * rd2 = small screen
+ */
+function screensize() {
+    let rd1 = document.getElementById('rd1');
+    let rd2 = document.getElementById('rd2');
+
+    if (rd1.checked == true) {
+        document.getElementById('canvas').classList.add('fullscreen');
+        document.getElementById('mobilescreen').classList.add('d-none');
+        document.getElementById('bg').classList.remove('bg-game');
+
+    } else if (rd2.checked == true) {
+        document.getElementById('canvas').classList.remove('fullscreen');
+        document.getElementById('mobilescreen').classList.add('d-none');
+
+    }
+
+}
 
 
 /**
